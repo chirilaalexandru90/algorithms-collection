@@ -1,5 +1,4 @@
 // take a string and trasform it into an english title
-console.log(`===> Phrase to uppercase exercise START`);
 const title = 'Take a string and trasform it into an english title';
 
 const TitleTransform = function (arg) {
@@ -8,4 +7,4 @@ const TitleTransform = function (arg) {
 
 console.log(TitleTransform(title));
 
-console.log(`===> Phrase to uppercase exercise STOP`);
+console.log(`=====> Phrase to uppercase exercise STOP`);

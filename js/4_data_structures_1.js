@@ -1,6 +1,4 @@
 // Exercise: Take the provided "data" and return an array of sums for each index of .data arrays
-console.log(`===> Data structures exercise START`);
-
 const data = [{
   "themes": [1, 4, 5, 7, 8, 9],
   "filtres": [{
@@ -30,4 +28,4 @@ const result = total.reduce(function (prev, next) {
   return prev;
 }, []);
 
-console.log(`=> Data structures exercise STOP`);
+console.log(`=====> Data structures exercise STOP`);

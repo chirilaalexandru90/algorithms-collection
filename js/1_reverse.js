@@ -1,6 +1,4 @@
-console.log(`=> Reverse string function START`);
 // EX1: recursive algorithms - replace reverse() function
-
 const apple = [1, 2, 3, 4, 5];
 
 const Reverser = function (arr) {
@@ -33,4 +31,4 @@ const reverseStringFct = function (arg) {
 let strReversed = reverseStringFct(str);
 console.log(strReversed);
 
-console.log(`=> Reverse string function END`);
+console.log(`=====> Reverse string function END`);
