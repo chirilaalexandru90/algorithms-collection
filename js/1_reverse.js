@@ -3,13 +3,13 @@ console.log(`=> Reverse string function START`);
 
 const apple = [1, 2, 3, 4, 5];
 
-const Reverser = function(arr) {
+const Reverser = function (arr) {
     let result = [];
     let newArr = [];
     arr.forEach(el => newArr.push(el));
 
     // recursive fct
-    let inner = function(arg) {
+    let inner = function (arg) {
         if (arg.length > 0) {
             result.push(arg.pop());
             inner(arg);
