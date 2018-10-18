@@ -20,7 +20,8 @@ const Rps = function (rounds) {
 const playGame = Rps(2);
 console.log(playGame);
 
-// Now play against computer - random by choosing RPSvsAI(rock), RPSvsAI(paper), RPSvsAI(scissor)
+// Now play against computer - random by choosing RockPaperScissors(rock), RockPaperScissors(paper), RockPaperScissors(scissor)
+
 const rock = 'rock';
 const paper = 'paper';
 const scissor = 'scissor';
@@ -57,7 +58,7 @@ const Random = function () {
     return Math.floor(Math.random() * possibilities.length);
 }
 
-const RPSvsAI = function (arg) {
+const RockPaperScissors = function (arg) {
     let computer = possibilities[Random()];
     let result = arg + computer;
     // console.log(arg, computer, result);
@@ -68,6 +69,6 @@ const RPSvsAI = function (arg) {
     }
 }
 
-RPSvsAI(rock);
+RockPaperScissors(rock);
 
 console.log(`=====> 7. Rock Paper Scissors END`);
