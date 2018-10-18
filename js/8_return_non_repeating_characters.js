@@ -2,21 +2,15 @@
 
 const randomString = 'adsfabcdefghijklmnopqrstuabcdefghijklmnopqrstuvxyzabcdefghijklmnopqrstuvxyzabcdefghijklmnopqrstuvxyzabcdefghijklmnopqrstuvabcdefghijklmnopqrstuvxyzabcdefghijklmnopqrstuvxyzabcdefghijklmnopqrstuvxyzabcdefghijklmnopabcdefghijklmnopqrstuwvxyzabcdefghijklmnopqrstuvxyzqrstuvxyzabcdefghijklmnopqrstuvxyzabcdefghijklmnopqrstuvxyzxyzabcdefghijklmnopqrstuvxyzabcdefghijklmnopqrstuvxyzvxyzabcdefghijklmnopqrstuvxyzfasdg';
 
-String.prototype.count = function (c) {
-    let result = 0;
-    for (let i = 0; i < this.length; i++) {
-        if (this[i] == c) result++;
-    }
-    return result;
-}
-
 function CharacterCecker(arg) {
     let stringToEvaluate = arg.split('');
     let obj = {};
     let minIndex = stringToEvaluate.length;
     
     stringToEvaluate.forEach((letter, index) => {
+        // check if "letter" is a property of the object
         if (!obj[letter]) {
+            // add tuple on "obj" index
             obj[letter] = [index, true];
         } else if (obj[letter]) {
             obj[letter] = false;
@@ -27,10 +21,12 @@ function CharacterCecker(arg) {
         if (obj[key]) {
             if (obj[key][0] < minIndex) {
                 minIndex = obj[key][0];
-                console.log(stringToEvaluate[minIndex], ' at index ', minIndex)
+                console.log('Character', stringToEvaluate[minIndex], ' at index ', minIndex)
             }
         }
     }
 }
 
 CharacterCecker(randomString);
+
+console.log(`=====> 8_. END`);
