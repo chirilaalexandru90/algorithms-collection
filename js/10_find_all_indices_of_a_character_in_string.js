@@ -2,7 +2,7 @@ let inputString = 'asdfadsf aadf dsfd fdafadf';
 
 function IndicesFinder(arg, el) {
     let indices = [];
-    let array = arg.split('');
+    let array = [...arg];
     this.el = el;
 
     let index = array.lastIndexOf(el);
