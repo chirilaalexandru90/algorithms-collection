@@ -11,4 +11,4 @@ let CheckIfContaninsConsecutive = function (arg) {
 }
 
 console.log(CheckIfContaninsConsecutive(arrayToCheck));
-console.log(`=====> Consecutive 3 numbers? END`);
+console.log(`===> Exercise 6 END`);

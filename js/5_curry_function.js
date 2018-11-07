@@ -25,4 +25,4 @@ function add(...args) {
 
 const sum = add(11, 2, 5);
 console.log(sum);
-console.log(`=====> Curry Functions STOP`);
+console.log(`===> Exercise 5 END`);

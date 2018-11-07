@@ -18,4 +18,4 @@ function IndicesFinder(arg, el) {
 
 IndicesFinder(inputString, 'a');
 
-console.log('====> 10_find_all_indices_of_a_character_in_string.js END');
+console.log('===> Exercise 10 END');

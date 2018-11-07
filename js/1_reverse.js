@@ -17,18 +17,16 @@ const Reverser = function (arr) {
     return result;
 };
 
-console.log(Reverser(apple));
+console.log(`${apple} reversed1  is: `, Reverser(apple));
 
 // EX2: using reduce : cumulator + next
 let str = 'abcdefg';
 // Array.prototype.split = function(separator, limit) {}
 const reverseStringFct = function (arg) {
-    return arg.split("").reduce(function (accum, next) {
-        return next + accum;
-    });
+    return arg.split("").reduce((accum, next) => next + accum);
 }
 
 let strReversed = reverseStringFct(str);
-console.log(strReversed);
+console.log(`${str} reversed2  is: `, strReversed);
 
-console.log(`=====> Reverse string function END`);
+console.log(`===> Exercise 1 END`);

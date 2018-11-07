@@ -7,4 +7,4 @@ const TitleTransform = function (arg) {
 
 console.log(TitleTransform(title));
 
-console.log(`=====> Phrase to uppercase exercise STOP`);
+console.log(`===> Exercise 3 END`);

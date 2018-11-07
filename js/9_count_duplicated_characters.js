@@ -8,4 +8,4 @@ String.prototype.count = function (c) {
     return result;
 }
 
-console.log(`=====> 9_. END`);
+console.log(`===> Exercise 9 END`);

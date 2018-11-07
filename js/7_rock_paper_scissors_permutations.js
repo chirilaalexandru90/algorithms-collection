@@ -71,4 +71,4 @@ const RockPaperScissors = function (arg) {
 
 RockPaperScissors(rock);
 
-console.log(`=====> 7. Rock Paper Scissors END`);
+console.log(`===> Exercise 7 END`);

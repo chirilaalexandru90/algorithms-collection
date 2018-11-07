@@ -29,4 +29,4 @@ function CharacterCecker(arg) {
 
 CharacterCecker(randomString);
 
-console.log(`=====> 8_. END`);
+console.log(`===> Exercise 8 END`);

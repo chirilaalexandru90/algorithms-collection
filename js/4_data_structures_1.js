@@ -28,4 +28,4 @@ const result = total.reduce(function (prev, next) {
   return prev;
 }, []);
 
-console.log(`=====> Data structures exercise STOP`);
+console.log(`===> Exercise 4 END`);

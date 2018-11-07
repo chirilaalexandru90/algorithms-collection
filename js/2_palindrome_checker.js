@@ -15,4 +15,4 @@ console.log(PalindromeChecker(5995)); // true
 
 console.log(PalindromeChecker({})); // false
 
-console.log(`=====> Palindrom exercise STOP`);
+console.log(`===> Exercise 2 END`);
