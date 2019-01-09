@@ -2,19 +2,19 @@
 const apple = [1, 2, 3, 4, 5];
 
 const Reverser = function (arr) {
-    let result = [];
-    let newArr = [];
-    arr.forEach(el => newArr.push(el));
+  let result = [];
+  let newArr = [];
+  arr.forEach(el => newArr.push(el));
 
-    // recursive fct
-    let inner = function (arg) {
-        if (arg.length > 0) {
-            result.push(arg.pop());
-            inner(arg);
-        }
+  // recursive fct
+  let inner = function (arg) {
+    if (arg.length > 0) {
+      result.push(arg.pop());
+      inner(arg);
     }
-    inner(newArr);
-    return result;
+  }
+  inner(newArr);
+  return result;
 };
 
 console.log(`${apple} reversed1  is: `, Reverser(apple));
@@ -23,7 +23,7 @@ console.log(`${apple} reversed1  is: `, Reverser(apple));
 let str = 'abcdefg';
 // Array.prototype.split = function(separator, limit) {}
 const reverseStringFct = function (arg) {
-    return arg.split("").reduce((accum, next) => next + accum);
+  return arg.split("").reduce((accum, next) => next + accum);
 }
 
 let strReversed = reverseStringFct(str);

@@ -4,8 +4,8 @@ const anotherWord = 'something';
 const arrayPalindrome = [1, 2, 3, 2, 1];
 
 const PalindromeChecker = function (arg) {
-    let tempArg = arg.toString().split("").reverse().join("");
-    return (tempArg == arg);
+  let tempArg = arg.toString().split("").reverse().join("");
+  return (tempArg == arg);
 }
 
 console.log(PalindromeChecker(word)); // true
