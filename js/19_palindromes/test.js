@@ -1,4 +1,4 @@
-// const palindromeChecker = require('./index-START');
+// const palindromeChecker = require('');
 
 // test('palindromeChecker is a function', () => {
 //   expect(typeof palindromeChecker).toEqual('function');

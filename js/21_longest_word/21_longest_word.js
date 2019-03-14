@@ -1,4 +1,4 @@
-const sentenceLongestWord = 'Finding the Longest Word In a Sentence';
+const sentenceLongestWord = 'Finding the Longest Word In a sentence choosed at random. You can select a loremipsum or something else of course';
 
 function longestWord(sentence) {
   const sentenceToArray = sentence.split(' ');
@@ -29,3 +29,10 @@ function longestWordWithReduce(sentence) {
 }
 
 console.log('21_Solution2 with .reduce():', longestWordWithReduce(sentenceLongestWord));
+
+function longestWordWithSort(sentence) {
+  let result = sentence.split(' ').sort((longestWord, currentWord) => currentWord.length - longestWord.length);
+  return result[0];
+}
+
+console.log('21_Solution3 with .sort():', longestWordWithSort(sentenceLongestWord));

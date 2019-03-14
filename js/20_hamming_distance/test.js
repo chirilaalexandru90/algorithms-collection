@@ -1,4 +1,4 @@
-// const hammingDistance = require('./index-START')
+// const hammingDistance = require('')
 
 // test('hammingDistance is a function', () => {
 //   expect(typeof hammingDistance).toEqual('function')
