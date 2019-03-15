@@ -15,6 +15,5 @@ function searchReplaceR(sentence) {
   let transformedSentence = sentence.replace(searchedWord, replaceWord);
   return transformedSentence;
 }
-console.log(performance.now());
+
 console.log('22_Solution2 with replace:', searchReplaceR(sentenceSR));
-console.log(performance.now());

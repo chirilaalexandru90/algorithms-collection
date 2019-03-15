@@ -19,7 +19,7 @@ console.log('21_Solution1 with for:', longestWord(sentenceLongestWord));
 
 function longestWordWithReduce(sentence) {
   let result = sentence.split(' ').reduce((longestWord, currentWord) => {
-    if(currentWord.length > longestWord.length){
+    if (currentWord.length > longestWord.length) {
       return currentWord;
     } else {
       return longestWord;
