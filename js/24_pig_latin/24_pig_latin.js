@@ -12,27 +12,31 @@
 const ex1 = 'pig';
 const ex2 = 'glove';
 const ex3 = 'explain';
+const ex4 = 'guy';
 
 function translateInPigLatin(word) {
-  const vowels = ['a', 'e', 'i', 'o', 'u'];
+  const vowels = ['a', 'e', 'i', 'o', 'u', 'y'];
 
-  function firstChar() {
+  function isFirstCharVowel() {
     return vowels.includes(word.toLowerCase()[0]);
   }
 
-  function secondChar() {
+  function isSecondCharVowel() {
     return vowels.includes(word.toLowerCase()[1]);
   }
 
-  if (firstChar() && !secondChar()) {
+  if (isFirstCharVowel() && !isSecondCharVowel()) {
     return `${word}way`;
 
-  } else if (!firstChar() && secondChar()) {
+  } else if (!isFirstCharVowel() && isSecondCharVowel()) {
     return `${word.slice(1)}${word.slice(0, 1)}ay`;
-    
-  } else if (!firstChar() && !secondChar()) {
+
+  } else if (!isFirstCharVowel() && !isSecondCharVowel()) {
     return `${word.slice(2)}${word.slice(0, 2)}ay`;
   }
 }
 
-console.log('24_Solution1:', translateInPigLatin(ex1), translateInPigLatin(ex2), translateInPigLatin(ex3)); // igpay oveglay explainway
+t1 = performance.now();
+console.log('24_Solution1 with includes and slice:', translateInPigLatin(ex1), translateInPigLatin(ex2), translateInPigLatin(ex3), translateInPigLatin(ex4)); // igpay oveglay explainway
+t2 = performance.now();
+console.log(t2 - t1, "miliseconds");
