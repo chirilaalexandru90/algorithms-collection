@@ -46,4 +46,23 @@ function noDuplicatesWithFilter(...arrs) {
   return result;
 }
 
-console.log("26_Solution2_with_sets", noDuplicatesWithFilter(array26, array27));
+console.log("26_Solution3_with_filter", noDuplicatesWithFilter(array26, array27));
+
+function noDuplicatesWithReduce (...arrs) {
+  let joinedArrays = [];
+  let result = [];
+
+  [...arrs].forEach(array => {
+    joinedArrays = [...joinedArrays, ...array];
+  });
+
+  result = joinedArrays.reduce((acc, next) => {
+    if(!joinedArrays.includes(next)) {
+      acc.push(next);
+    }
+  });
+
+  return result;
+}
+
+console.log("26_Solution4_with_reduce", noDuplicatesWithFilter(array26, array27));
