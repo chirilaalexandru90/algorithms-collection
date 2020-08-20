@@ -19,8 +19,9 @@ function add(...args) {
   if (args.length < 2) {
     return add.bind(this, ...args);
   }
-  const [x, y] = args;
-  return x + y;
+  
+  console.log(args)
+  return args.reduce((a,b) => a + b);
 }
 
 const sum = add(11, 2, 5);
