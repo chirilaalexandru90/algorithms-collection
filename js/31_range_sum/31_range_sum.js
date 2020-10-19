@@ -215,6 +215,102 @@ for (i = 0; i < arrayOfLetters.length; i++) {
 
 let rr = [];
 
-for(i=0; i<arrayOfLetters.length; i++){
+for (i = 0; i < arrayOfLetters.length; i++) {
   rr.push(storeArray[i])
+}
+
+// count how many numbers in an array are related where the absolute difference between any two elements is less than or equal to 1
+
+function pickingNumbers(a) {
+  return [...new Set(a)].reduce((uniqueValue, nextUniqueValue) => {
+    return Math.max(uniqueValue,
+      a.reduce((counter, nextCounter) =>
+        counter += (nextCounter === nextUniqueValue ||
+          nextCounter === nextUniqueValue + 1), 0))
+  }, 0)
+}
+
+//An avid hiker keeps meticulous records of their hikes. During the last hike that took exactly  steps, for every step it was noted if it was an uphill, , or a downhill,  step. Hikes always start and end at sea level, and each step up or down represents a  unit change in altitude. We define the following terms:
+// A mountain is a sequence of consecutive steps above sea level, starting with a step up from sea level and ending with a step down to sea level.
+// A valley is a sequence of consecutive steps below sea level, starting with a step down from sea level and ending with a step up to sea level.
+// Given the sequence of up and down steps during a hike, find and print the number of valleys walked through.
+/*
+ *
+ * The function is expected to return an INTEGER.
+ * The function accepts following parameters:
+ *  1. INTEGER steps
+ *  2. STRING path 'UDDDUDUU'
+ */
+
+function countingValleys(path) {
+  let pathAr = path.split('');
+  let seaLevel = 0;
+  let seaLevelMap = [];
+  let mountainOrValeyMap = [];
+  let countValeys = 0
+
+  pathAr.forEach(step => {
+    if (step === 'U') {
+      seaLevel += 1;
+      seaLevelMap.push(seaLevel);
+    } else if (step === 'D') {
+      seaLevel = seaLevel - 1;
+      seaLevelMap.push(seaLevel);
+    }
+  });
+
+  mountainOrValeyMap = seaLevelMap.join('').split(0).map(e => e.split(''));
+  mountainOrValeyMap.forEach(arr => {
+    if (arr && arr[0] && arr[0].split('')[0] === '-') {
+      countValeys += 1;
+    }
+  });
+  return countValeys;
+}
+//////////////
+function countingValleys(s) {
+  let currLevel = 0;
+  let valleys = 0;
+
+  s = s.split('');
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] === 'U') {
+      currLevel += 1;
+      if (currLevel == 0) {
+        valleys += 1;
+      }
+    } else {
+      currLevel -= 1;
+    }
+  }
+  return valleys;
+}
+
+// Taking a book with pages numbers like 1 2&3 4&5 6&7 .... n&n+1 , return the minimum number of pages to turn from start or from the end of the book
+function pageCount(pages, p) {
+  let counter = 0;
+
+  if (pages / 2 < p) {
+    counter = Math.floor((pages - p) / 2);
+    if (pages - p === 1 && pages % 2 === 0) counter = 1;
+  } else {
+    counter = Math.floor(p / 2);
+  }
+  return counter
+}
+//////
+function pageCount(n, p) {
+  const pageTurns = Math.floor(p / 2);
+  const totalTurns = Math.floor(n / 2);
+  return Math.min(pageTurns, totalTurns - pageTurns);
+}
+
+
+// Having a budget, a person needs to detemine what is the most expensive 2 combinations on purchases from 2 lists
+//int item1[n]: the items1 prices
+//int items2[m]: the drive prices
+//int b: the budget
+function getMoneySpent(items1, items2, budget) {
+  return items1.reduce((item1, currentItem1) =>
+    Math.max(item1, ...items2.map(u => u + currentItem1).filter(k => budget >= k)), -1);
 }
