@@ -314,3 +314,35 @@ function getMoneySpent(items1, items2, budget) {
   return items1.reduce((item1, currentItem1) =>
     Math.max(item1, ...items2.map(u => u + currentItem1).filter(k => budget >= k)), -1);
 }
+
+
+// climbing leaderboard
+// An arcade game player wants to climb to the top of the leaderboard and track their ranking. The game uses Dense Ranking, so its leaderboard works like this:
+// The player with the highest score is ranked number  on the leaderboard.
+// Players who have equal scores receive the same ranking number, and the next player(s) receive the immediately following ranking number.
+
+// example 1 climbingLeaderboard([100, 90, 90, 80, 75, 60], [50, 65, 77, 90, 102]) returns [6, 5, 4, 2, 1]
+// example 2 climbingLeaderboard([64, 58, 59 ,100, 90, 90, 80, 75, 60], [50, 65, 77, 90, 102]) returns [9, 5, 4, 2, 1]
+// example 3 climbingLeaderboard([49, 64, 58, 59, 100, 90, 90, 80, 75, 60], [50, 65, 77, 90, 102]) returns SAME [9, 5, 4, 2, 1]
+
+function climbingLeaderboard(scores, alice) {
+  let result = []
+  let uniqueScores = [...new Set(scores)].sort((a, b) => b - a);
+  let position = uniqueScores.length - 1;
+  let aliceScores = alice.sort((a, b) => a - b);
+
+  aliceScores.forEach(aCurScore => {
+      while (position >= 0) {
+          if (aCurScore >= uniqueScores[position]) {
+              position--;
+          } else {
+              result.push(position + 2);
+              break
+          }
+      }
+
+      if (position < 0) { result.push(1); }
+  })
+
+  return result
+}
